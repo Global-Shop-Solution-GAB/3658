@@ -1,0 +1,587 @@
+Program.Sub.ScreenSU.Start
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.UDT.Header.Define("Terminal",String,"Terminal")
+Variable.UDT.Header.Define("Date_Rejected",Date,"Date_Rejected")
+Variable.UDT.Header.Define("Part_No",String,"Part_No")
+Variable.UDT.Header.Define("Part_Locn",String,"Part_Locn")
+Variable.UDT.Header.Define("Part_Desc",String,"Part_Desc")
+Variable.UDT.Header.Define("Rej_Quantity",Long,"Rej_Quantity")
+Variable.UDT.Header.Define("Reason_Code",String,"Reason_Code")
+Variable.UDT.Header.Define("Work_Order",String,"Work_Order")
+Variable.UDT.Header.Define("WO_Suffix",String,"WO_Suffix")
+Variable.UDT.Header.Define("WO_Seq",String,"WO_Seq")
+Variable.UDT.Header.Define("Work_Cntr",String,"Work_Cntr")
+Variable.UDT.Header.Define("PO_Number",String,"PO_Number")
+Variable.UDT.Header.Define("PO_Line",String,"PO_Line")
+Variable.UDT.Header.Define("Cust_PO",String,"Cust_PO")
+Variable.UDT.Header.Define("Vendor_NO",String,"Vendor_NO")
+Variable.UDT.Header.Define("Cust_No",String,"Cust_No")
+Variable.UDT.Header.Define("Cust_V_Name",String,"Cust_V_Name")
+Variable.UDT.Header.Define("Empl_No",String,"Empl_No")
+Variable.UDT.Header.Define("Empl_Name",String,"Empl_Name")
+Variable.UDT.Header.Define("Dept",String,"Dept")
+Variable.UDT.Header.Define("User_1",String,"User_1")
+Variable.UDT.Header.Define("User_2",String,"User_2")
+Variable.UDT.Header.Define("Control_Title",String,"Control_Title")
+Variable.UDT.Header.Define("Vend_Cust_Title",String,"Vend_Cust_Title")
+Variable.UDT.Header.Define("User_Title_1",String,"User_Title_1")
+Variable.UDT.Header.Define("User_Title_2",String,"User_Title_2")
+Variable.UDT.Header.Define("Inspector",String,"Inspector")
+Variable.UDT.Header.Define("Insp_Date",Date,"Insp_Date")
+Variable.UDT.Header.Define("Verified_By",String,"Verified_By")
+Variable.UDT.Header.Define("Verified_Date",Date,"Verified_Date")
+Variable.UDT.Header.Define("Copy_Title",String,"Copy_Title")
+
+Variable.UDT.Lines.Define("Terminal",String,"Terminal")
+Variable.UDT.Lines.Define("Work_Order",String,"Work_Order")
+Variable.UDT.Lines.Define("WO_Suffix",String,"WO_Suffix")
+Variable.UDT.Lines.Define("WO_Seq",String,"WO_Seq")
+Variable.UDT.Lines.Define("DISC_ITEM_1",Long,"DISC_ITEM_1")
+Variable.UDT.Lines.Define("DISC_ITEM_2",Long,"DISC_ITEM_2")
+Variable.UDT.Lines.Define("DISC_ITEM_3",Long,"DISC_ITEM_3")
+Variable.UDT.Lines.Define("DISC_ITEM_4",Long,"DISC_ITEM_4")
+Variable.UDT.Lines.Define("DISC_ITEM_5",Long,"DISC_ITEM_5")
+Variable.UDT.Lines.Define("DISC_ITEM_6",Long,"DISC_ITEM_6")
+Variable.UDT.Lines.Define("DISC_ITEM_7",Long,"DISC_ITEM_7")
+Variable.UDT.Lines.Define("DISC_ITEM_8",Long,"DISC_ITEM_8")
+Variable.UDT.Lines.Define("DISC_ITEM_9",Long,"DISC_ITEM_9")
+Variable.UDT.Lines.Define("DISC_ITEM_10",Long,"DISC_ITEM_10")
+Variable.UDT.Lines.Define("DISC_ITEM_11",Long,"DISC_ITEM_11")
+Variable.UDT.Lines.Define("DISC_ITEM_12",Long,"DISC_ITEM_12")
+Variable.UDT.Lines.Define("DISC_ITEM_13",Long,"DISC_ITEM_13")
+Variable.UDT.Lines.Define("DISC_ITEM_14",Long,"DISC_ITEM_14")
+Variable.UDT.Lines.Define("DISC_ITEM_15",Long,"DISC_ITEM_15")
+Variable.UDT.Lines.Define("DISC_QTY_1",Long,"DISC_QTY_1")
+Variable.UDT.Lines.Define("DISC_QTY_2",Long,"DISC_QTY_2")
+Variable.UDT.Lines.Define("DISC_QTY_3",Long,"DISC_QTY_3")
+Variable.UDT.Lines.Define("DISC_QTY_4",Long,"DISC_QTY_4")
+Variable.UDT.Lines.Define("DISC_QTY_5",Long,"DISC_QTY_5")
+Variable.UDT.Lines.Define("DISC_QTY_6",Long,"DISC_QTY_6")
+Variable.UDT.Lines.Define("DISC_QTY_7",Long,"DISC_QTY_7")
+Variable.UDT.Lines.Define("DISC_QTY_8",Long,"DISC_QTY_8")
+Variable.UDT.Lines.Define("DISC_QTY_9",Long,"DISC_QTY_9")
+Variable.UDT.Lines.Define("DISC_QTY_10",Long,"DISC_QTY_10")
+Variable.UDT.Lines.Define("DISC_QTY_11",Long,"DISC_QTY_11")
+Variable.UDT.Lines.Define("DISC_QTY_12",Long,"DISC_QTY_12")
+Variable.UDT.Lines.Define("DISC_QTY_13",Long,"DISC_QTY_13")
+Variable.UDT.Lines.Define("DISC_QTY_14",Long,"DISC_QTY_14")
+Variable.UDT.Lines.Define("DISC_QTY_15",Long,"DISC_QTY_15")
+Variable.UDT.Lines.Define("DISC_DESC_1",String,"DISC_DESC_1")
+Variable.UDT.Lines.Define("DISC_DESC_2",String,"DISC_DESC_2")
+Variable.UDT.Lines.Define("DISC_DESC_3",String,"DISC_DESC_3")
+Variable.UDT.Lines.Define("DISC_DESC_4",String,"DISC_DESC_4")
+Variable.UDT.Lines.Define("DISC_DESC_5",String,"DISC_DESC_5")
+Variable.UDT.Lines.Define("DISC_DESC_6",String,"DISC_DESC_6")
+Variable.UDT.Lines.Define("DISC_DESC_7",String,"DISC_DESC_7")
+Variable.UDT.Lines.Define("DISC_DESC_8",String,"DISC_DESC_8")
+Variable.UDT.Lines.Define("DISC_DESC_9",String,"DISC_DESC_9")
+Variable.UDT.Lines.Define("DISC_DESC_10",String,"DISC_DESC_10")
+Variable.UDT.Lines.Define("DISC_DESC_11",String,"DISC_DESC_11")
+Variable.UDT.Lines.Define("DISC_DESC_12",String,"DISC_DESC_12")
+Variable.UDT.Lines.Define("DISC_DESC_13",String,"DISC_DESC_13")
+Variable.UDT.Lines.Define("DISC_DESC_14",String,"DISC_DESC_14")
+Variable.UDT.Lines.Define("DISC_DESC_15",String,"DISC_DESC_15")
+Variable.UDT.Lines.Define("Comment_1_1",String,"Comment_1_1")
+Variable.UDT.Lines.Define("Comment_1_2",String,"Comment_1_2")
+Variable.UDT.Lines.Define("Comment_1_3",String,"Comment_1_3")
+Variable.UDT.Lines.Define("Comment_1_4",String,"Comment_1_4")
+Variable.UDT.Lines.Define("Comment_1_5",String,"Comment_1_5")
+Variable.UDT.Lines.Define("Comment_1_6",String,"Comment_1_6")
+Variable.UDT.Lines.Define("Comment_1_7",String,"Comment_1_7")
+Variable.UDT.Lines.Define("Comment_2_1",String,"Comment_2_1")
+Variable.UDT.Lines.Define("Comment_2_2",String,"Comment_2_2")
+Variable.UDT.Lines.Define("Comment_2_3",String,"Comment_2_3")
+Variable.UDT.Lines.Define("Comment_2_4",String,"Comment_2_4")
+Variable.UDT.Lines.Define("Comment_2_5",String,"Comment_2_5")
+Variable.UDT.Lines.Define("Comment_2_6",String,"Comment_2_6")
+Variable.UDT.Lines.Define("Comment_2_7",String,"Comment_2_7")
+Variable.UDT.Lines.Define("Comment_3_1",String,"Comment_3_1")
+Variable.UDT.Lines.Define("Comment_3_2",String,"Comment_3_2")
+Variable.UDT.Lines.Define("Comment_3_3",String,"Comment_3_3")
+Variable.UDT.Lines.Define("Comment_3_4",String,"Comment_3_4")
+Variable.UDT.Lines.Define("Comment_3_5",String,"Comment_3_5")
+Variable.UDT.Lines.Define("Comment_3_6",String,"Comment_3_6")
+Variable.UDT.Lines.Define("Comment_3_7",String,"Comment_3_7")
+Variable.UDT.Lines.Define("Rej_Text_1",String,"Rej_Text_1")
+Variable.UDT.Lines.Define("Rej_Text_2",String,"Rej_Text_2")
+Variable.UDT.Lines.Define("Rej_Text_3",String,"Rej_Text_3")
+Variable.UDT.Lines.Define("Rej_Text_4",String,"Rej_Text_4")
+
+
+Variable.uGlobal.uHeader.Declare("Header")
+Variable.uGlobal.uLines.Declare("Lines")
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Coded by: Melinda Keyes
+'Project Start Date: 10/3/2011
+'Hooks:
+'  15850 - Script 1
+'Notes:
+'  A GAB script will be created to print and internal rejection report from the script 1 button
+'  of the GUI screen used to designate codes for scrap pieces.
+'  When the script 1 button is clicked (28401), the GAB script will print the
+'  updated version of the Internal Rejection Report that will be changed to include work order comments.
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+F.Intrinsic.Control.If(V.Caller.Hook,=,15850)
+
+	F.ODBC.Connection!conX.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+		
+	V.Local.sQuery.Declare(String)
+	F.Intrinsic.String.Concat("DELETE FROM ATG_3658_BI_RJCT_HDR WHERE TERMINAL = '",V.Caller.Terminal,"'",V.Local.sQuery)
+	F.ODBC.Connection!conX.Execute(V.Local.sQuery)
+	F.Intrinsic.String.Concat("DELETE FROM ATG_3658_BI_RJCT_LNE WHERE TERMINAL = '",V.Caller.Terminal,"'",V.Local.sQuery)
+	F.ODBC.Connection!conX.Execute(V.Local.sQuery)
+
+	'check first to see if the user has entered any information for scrap data fields
+	F.Intrinsic.Control.CallSub(Load_grid_data)
+	'load data from the gui screen
+	F.Intrinsic.Control.CallSub(Load_screen_info)
+	'load any user-entered comments
+	F.Intrinsic.Control.CallSub(Load_comments)
+	'populate the custom tables which the report will draw from
+	F.Intrinsic.Control.CallSub(Populate_tables)
+	'print the customized internal rejection report
+	F.Intrinsic.Control.CallSub(Print_report)
+
+	F.ODBC.Connection!conX.Close
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_3658_PRINT_INTERNAL_REJ_RPT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Main.End
+
+Program.Sub.Load_Screen_Info.Start
+F.Intrinsic.Control.SetErrorHandler("Load_Screen_Info_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sQuery.Declare(String)
+V.Local.sTemp.Declare(String)
+V.Local.iTemp.Declare(Long)
+
+V.uGlobal.uHeader!Terminal.Set(V.Caller.Terminal)
+'F.Intrinsic.String.Split(V.Ambient.Now," ",V.Local.sTemp)
+'F.Intrinsic.String.StripCharacters(V.Local.sTemp(0),V.Local.sTemp)
+'F.Intrinsic.String.LimitSplit(V.Local.sTemp,2,V.Local.sTemp)
+'F.Intrinsic.String.Concat(V.Local.sTemp(2),V.Local.sTemp(3),V.Local.sTemp(0),V.Local.sTemp(1),V.Local.sTemp)
+V.uGlobal.uHeader!Date_Rejected.Set(V.Ambient.Now)
+F.Intrinsic.String.Split(V.Passed.000004,"-",V.Local.sTemp)
+V.uGlobal.uHeader!Work_Order.Set(V.Local.sTemp(0))
+V.uGlobal.uHeader!WO_Suffix.Set(V.Local.sTemp(1))
+V.uGlobal.uHeader!WO_Seq.Set(V.Passed.000005)
+
+F.Intrinsic.String.Concat("SELECT * FROM V_JOB_HEADER WHERE JOB = '",V.Local.sTemp(0).PSQLFriendly,"' AND SUFFIX = '",V.Local.sTemp(1).PSQLFriendly,"'",V.Local.sQuery)
+F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sQuery)
+F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+
+	V.uGlobal.uHeader!Part_No.Set(V.ODBC.conX!rst.FieldValTrim!PART)
+	V.uGlobal.uHeader!Part_Locn.Set(V.ODBC.conX!rst.FieldValTrim!LOCATION)
+	V.uGlobal.uHeader!Part_Desc.Set(V.ODBC.conX!rst.FieldValTrim!DESCRIPTION)
+	V.uGlobal.uHeader!Rej_Quantity.Set(V.Passed.000002)
+	V.uGlobal.uHeader!Work_Cntr.Set(V.Passed.009996)
+	V.uGlobal.uHeader!PO_Number.Set(V.ODBC.conX!rst.FieldValTrim!CUSTOMER_PO)
+	V.uGlobal.uHeader!Cust_No.Set(V.ODBC.conX!rst.FieldValTrim!Customer)
+	F.Intrinsic.String.Concat("SELECT * FROM V_CUSTOMER_MASTER WHERE CUSTOMER = '",V.ODBC.conX!rst.FieldVal!Customer,"'",V.Local.sQuery)
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst2",V.Local.sQuery)
+		F.Intrinsic.Control.If(V.ODBC.conX!rst2.EOF,<>,True)
+			V.uGlobal.uHeader!Cust_V_Name.Set(V.ODBC.conX!rst2.FieldValTrim!NAME_CUSTOMER)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.UI.Msgbox("No customer record was found for this work order.")
+'			F.Intrinsic.UI.Msgbox(V.Local.sQuery)
+			F.Intrinsic.Control.End
+		F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst2.Close
+	V.uGlobal.uHeader!Empl_No.Set(V.Passed.009993)
+	V.uGlobal.uHeader!Empl_Name.Set(V.Passed.009994)
+
+	V.uGlobal.uLines!Terminal.Set(V.Caller.Terminal)
+	V.uGlobal.uLines!Work_Order.Set(V.ODBC.conX!rst.FieldValTrim!JOB)
+	V.uGlobal.uLines!WO_Suffix.Set(V.ODBC.conX!rst.FieldValTrim!SUFFIX)
+	V.uGlobal.uLines!WO_Seq.Set(V.Passed.000005)
+
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("No job was found with this work order number and suffix. Cancelling print.")
+	F.ODBC.conX!rst.close
+	F.ODBC.Connection!conX.Close
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndIf
+F.ODBC.conX!rst.Close
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Load_Screen_Info_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_3658_PRINT_INTERNAL_REJ_RPT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Load_Screen_Info.End
+
+Program.Sub.Load_Grid_Data.Start
+F.Intrinsic.Control.SetErrorHandler("Load_Grid_Data_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sFile.Declare(String)
+V.Local.sLine.Declare(String)
+V.Local.iHdl.Declare(Long)
+V.Local.iC.Declare(Long)
+V.Local.bEOF.Declare(Boolean)
+V.Local.bExists.Declare(Boolean)
+
+V.Local.sFile.Set(V.Passed.SCRAP-DATA-FILE)
+F.Intrinsic.File.Exists(V.Local.sFile,V.Local.bExists)
+F.Intrinsic.Debug.Stop
+F.Intrinsic.Control.If(V.Local.bExists,=,False)
+	F.Intrinsic.UI.Msgbox("No scrap data was found for this work order. Cancelling print.")
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.Else
+	F.Intrinsic.File.GetHandle(V.Local.iHdl)
+	F.Intrinsic.File.OpenForRead(V.Local.sFile,V.Local.iHdl)
+	F.Intrinsic.Control.For(V.Local.iC,0,6,1)
+		F.Intrinsic.File.ReadLine(V.Local.iHdl,V.Local.sLine)
+	F.Intrinsic.Control.Next(V.Local.iC)
+	F.Intrinsic.File.EOF(V.Local.iHdl,V.Local.bEOF)
+	V.Local.iC.Set(1)
+	F.Intrinsic.Control.DoUntil(V.Local.bEOF,=,True)
+		F.Intrinsic.File.ReadLine(V.Local.iHdl,V.Local.sLine)
+		F.Intrinsic.String.Split(V.Local.sLine,"|~|",V.Local.sLine)
+		F.Intrinsic.Control.SelectCase(V.Local.iC)
+		F.Intrinsic.Control.Case(1)
+			V.uGlobal.uLines!DISC_DESC_1.Set(V.Local.sLine(1))
+			V.uGlobal.uLines!DISC_QTY_1.Set(V.Local.sLine(2))
+			V.uGlobal.uLines!DISC_ITEM_1.Set(V.Local.sLine(3))
+		F.Intrinsic.Control.Case(2)
+			V.uGlobal.uLines!DISC_DESC_2.Set(V.Local.sLine(1))
+			V.uGlobal.uLines!DISC_QTY_2.Set(V.Local.sLine(2))
+			V.uGlobal.uLines!DISC_ITEM_2.Set(V.Local.sLine(3))
+		F.Intrinsic.Control.Case(3)
+			V.uGlobal.uLines!DISC_DESC_3.Set(V.Local.sLine(1))
+			V.uGlobal.uLines!DISC_QTY_3.Set(V.Local.sLine(2))
+			V.uGlobal.uLines!DISC_ITEM_3.Set(V.Local.sLine(3))
+		F.Intrinsic.Control.Case(4)
+			V.uGlobal.uLines!DISC_DESC_4.Set(V.Local.sLine(1))
+			V.uGlobal.uLines!DISC_QTY_4.Set(V.Local.sLine(2))
+			V.uGlobal.uLines!DISC_ITEM_4.Set(V.Local.sLine(3))
+		F.Intrinsic.Control.Case(5)
+			V.uGlobal.uLines!DISC_DESC_5.Set(V.Local.sLine(1))
+			V.uGlobal.uLines!DISC_QTY_5.Set(V.Local.sLine(2))
+			V.uGlobal.uLines!DISC_ITEM_5.Set(V.Local.sLine(3))
+		F.Intrinsic.Control.Case(6)
+			V.uGlobal.uLines!DISC_DESC_6.Set(V.Local.sLine(1))
+			V.uGlobal.uLines!DISC_QTY_6.Set(V.Local.sLine(2))
+			V.uGlobal.uLines!DISC_ITEM_6.Set(V.Local.sLine(3))
+		F.Intrinsic.Control.Case(7)
+			V.uGlobal.uLines!DISC_DESC_7.Set(V.Local.sLine(1))
+			V.uGlobal.uLines!DISC_QTY_7.Set(V.Local.sLine(2))
+			V.uGlobal.uLines!DISC_ITEM_7.Set(V.Local.sLine(3))
+		F.Intrinsic.Control.Case(8)
+			V.uGlobal.uLines!DISC_DESC_8.Set(V.Local.sLine(1))
+			V.uGlobal.uLines!DISC_QTY_8.Set(V.Local.sLine(2))
+			V.uGlobal.uLines!DISC_ITEM_8.Set(V.Local.sLine(3))
+		F.Intrinsic.Control.Case(9)
+			V.uGlobal.uLines!DISC_DESC_9.Set(V.Local.sLine(1))
+			V.uGlobal.uLines!DISC_QTY_9.Set(V.Local.sLine(2))
+			V.uGlobal.uLines!DISC_ITEM_9.Set(V.Local.sLine(3))
+		F.Intrinsic.Control.Case(10)
+			V.uGlobal.uLines!DISC_DESC_10.Set(V.Local.sLine(1))
+			V.uGlobal.uLines!DISC_QTY_10.Set(V.Local.sLine(2))
+			V.uGlobal.uLines!DISC_ITEM_10.Set(V.Local.sLine(3))
+		F.Intrinsic.Control.Case(11)
+			V.uGlobal.uLines!DISC_DESC_11.Set(V.Local.sLine(1))
+			V.uGlobal.uLines!DISC_QTY_11.Set(V.Local.sLine(2))
+			V.uGlobal.uLines!DISC_ITEM_11.Set(V.Local.sLine(3))
+		F.Intrinsic.Control.Case(12)
+			V.uGlobal.uLines!DISC_DESC_12.Set(V.Local.sLine(1))
+			V.uGlobal.uLines!DISC_QTY_12.Set(V.Local.sLine(2))
+			V.uGlobal.uLines!DISC_ITEM_12.Set(V.Local.sLine(3))
+		F.Intrinsic.Control.Case(13)
+			V.uGlobal.uLines!DISC_DESC_13.Set(V.Local.sLine(1))
+			V.uGlobal.uLines!DISC_QTY_13.Set(V.Local.sLine(2))
+			V.uGlobal.uLines!DISC_ITEM_13.Set(V.Local.sLine(3))
+		F.Intrinsic.Control.Case(14)
+			V.uGlobal.uLines!DISC_DESC_14.Set(V.Local.sLine(1))
+			V.uGlobal.uLines!DISC_QTY_14.Set(V.Local.sLine(2))
+			V.uGlobal.uLines!DISC_ITEM_14.Set(V.Local.sLine(3))
+		F.Intrinsic.Control.Case(15)
+			V.uGlobal.uLines!DISC_DESC_15.Set(V.Local.sLine(1))
+			V.uGlobal.uLines!DISC_QTY_15.Set(V.Local.sLine(2))
+			V.uGlobal.uLines!DISC_ITEM_15.Set(V.Local.sLine(3))
+		F.Intrinsic.Control.CaseElse
+			F.Intrinsic.UI.Msgbox("Maximum of 15 rejection lines has been reached for this job entry.")
+		F.Intrinsic.Control.EndSelect
+		F.Intrinsic.Math.Add(V.Local.iC,1,V.Local.iC)
+		F.Intrinsic.File.EOF(V.Local.iHdl,V.Local.bEOF)
+	F.Intrinsic.Control.Loop
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Load_Grid_Data_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_3658_PRINT_INTERNAL_REJ_RPT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Load_Grid_Data.End
+
+Program.Sub.Populate_Tables.Start
+F.Intrinsic.Control.SetErrorHandler("Populate_Tables_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.ODBC.Connection!conX.OpenRecordsetRW("rst","ATG_3658_BI_RJCT_HDR")
+	F.Intrinsic.Variable.SaveUDTToRecordset("conX","rst","V.uGlobal.uHeader")
+	F.ODBC.conX!rst.Update
+F.ODBC.conX!rst.Close
+
+F.ODBC.Connection!conX.OpenRecordsetRW("rst","ATG_3658_BI_RJCT_LNE")
+	F.Intrinsic.Variable.SaveUDTToRecordset("conX","rst","V.uGlobal.uLines")
+	F.ODBC.conX!rst.Update
+F.ODBC.conX!rst.Close
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Populate_Tables_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_3658_PRINT_INTERNAL_REJ_RPT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+Function.Intrinsic.Control.EndIf
+
+
+'	F.ODBC.conX!rst.Set!Report_ID(V.uGlobal.uHeader!Report_ID)
+'	F.ODBC.conX!rst.Set!Date_Rejected(V.uGlobal.uHeader!Date_Rejected)
+'	F.ODBC.conX!rst.Set!Part_No(V.uGlobal.uHeader!Part_No)
+'	F.ODBC.conX!rst.Set!Part_Locn(V.uGlobal.uHeader!Part_Locn)
+'	F.ODBC.conX!rst.Set!Part_Desc(V.uGlobal.uHeader!Part_Desc)
+'	F.ODBC.conX!rst.Set!Rej_Quantity(V.uGlobal.uHeader!Rej_Quantity)
+'	F.ODBC.conX!rst.Set!Reason_Code(V.uGlobal.uHeader!Reason_Code)
+'	F.ODBC.conX!rst.Set!Work_Order(V.uGlobal.uHeader!Work_Order)
+'	F.ODBC.conX!rst.Set!WO_Suffix(V.uGlobal.uHeader!WO_Suffix)
+'	F.ODBC.conX!rst.Set!WO_Seq(V.uGlobal.uHeader!WO_Seq)
+'	F.ODBC.conX!rst.Set!Work_Cntr(V.uGlobal.uHeader!Work_Cntr)
+'	F.ODBC.conX!rst.Set!PO_Number(V.uGlobal.uHeader!PO_Number)
+'	F.ODBC.conX!rst.Set!PO_Line(V.uGlobal.uHeader!PO_Line)
+'	F.ODBC.conX!rst.Set!Cust_PO(V.uGlobal.uHeader!Cust_PO)
+'	F.ODBC.conX!rst.Set!Vendor_NO(V.uGlobal.uHeader!Vendor_No)
+'	F.ODBC.conX!rst.Set!Cust_No(V.uGlobal.uHeader!Cust_No)
+'	F.ODBC.conX!rst.Set!Cust_V_Name(V.uGlobal.uHeader!Cust_V_Name)
+'	F.ODBC.conX!rst.Set!Empl_No(V.uGlobal.uHeader!Empl_No)
+'	F.ODBC.conX!rst.Set!Empl_Name(V.uGlobal.uHeader!Empl_Name)
+'	F.ODBC.conX!rst.Set!Dept(V.uGlobal.uHeader!Dept)
+'	F.ODBC.conX!rst.Set!User_1(V.uGlobal.uHeader!User_1)
+'	F.ODBC.conX!rst.Set!User_2(V.uGlobal.uHeader!User_2)
+'	F.ODBC.conX!rst.Set!Control_Title(V.uGlobal.uHeader!Control_Title)
+'	F.ODBC.conX!rst.Set!Vend_Cust_Title(V.uGlobal.uHeader!Vend_Cust_Title)
+'	F.ODBC.conX!rst.Set!User_Title_1(V.uGlobal.uHeader!User_Title_1)
+'	F.ODBC.conX!rst.Set!User_Title_2(V.uGlobal.uHeader!User_Title_2)
+'	F.ODBC.conX!rst.Set!Inspector(V.uGlobal.uHeader!Inspector)
+'	F.ODBC.conX!rst.Set!Insp_Date(V.uGlobal.uHeader!Insp_Date)
+'	F.ODBC.conX!rst.Set!Verified_By(V.uGlobal.uHeader!Verified_By)
+'	F.ODBC.conX!rst.Set!Verified_Date(V.uGlobal.uHeader!Verified_Date)
+'	F.ODBC.conX!rst.Set!Copy_Title(V.uGlobal.uHeader!Copy_Title)
+
+'	F.ODBC.conX!rst.Set!Report_ID(V.uGlobal.uLines!Report_ID)
+'	F.ODBC.conX!rst.Set!Work_Order(V.uGlobal.uLines!Work_Order)
+'	F.ODBC.conX!rst.Set!WO_Suffix(V.uGlobal.uLines!WO_Suffix)
+'	F.ODBC.conX!rst.Set!WO_Seq(V.uGlobal.uLines!WO_Seq)
+'	F.ODBC.conX!rst.Set!DISC_ITEM_1(V.uGlobal.uLines!DISC_ITEM_1)
+'	F.ODBC.conX!rst.Set!DISC_ITEM_2(V.uGlobal.uLines!DISC_ITEM_2)
+'	F.ODBC.conX!rst.Set!DISC_ITEM_3(V.uGlobal.uLines!DISC_ITEM_3)
+'	F.ODBC.conX!rst.Set!DISC_ITEM_4(V.uGlobal.uLines!DISC_ITEM_4)
+'	F.ODBC.conX!rst.Set!DISC_ITEM_5(V.uGlobal.uLines!DISC_ITEM_5)
+'	F.ODBC.conX!rst.Set!DISC_ITEM_6(V.uGlobal.uLines!DISC_ITEM_6)
+'	F.ODBC.conX!rst.Set!DISC_ITEM_7(V.uGlobal.uLines!DISC_ITEM_7)
+'	F.ODBC.conX!rst.Set!DISC_ITEM_8(V.uGlobal.uLines!DISC_ITEM_8)
+'	F.ODBC.conX!rst.Set!DISC_ITEM_9(V.uGlobal.uLines!DISC_ITEM_9)
+'	F.ODBC.conX!rst.Set!DISC_ITEM_10(V.uGlobal.uLines!DISC_ITEM_10)
+'	F.ODBC.conX!rst.Set!DISC_ITEM_11(V.uGlobal.uLines!DISC_ITEM_11)
+'	F.ODBC.conX!rst.Set!DISC_ITEM_12(V.uGlobal.uLines!DISC_ITEM_12)
+'	F.ODBC.conX!rst.Set!DISC_ITEM_13(V.uGlobal.uLines!DISC_ITEM_13)
+'	F.ODBC.conX!rst.Set!DISC_ITEM_14(V.uGlobal.uLines!DISC_ITEM_14)
+'	F.ODBC.conX!rst.Set!DISC_ITEM_15(V.uGlobal.uLines!DISC_ITEM_15)
+'	F.ODBC.conX!rst.Set!DISC_QTY_1(V.uGlobal.uLines!DISC_QTY_1)
+'	F.ODBC.conX!rst.Set!DISC_QTY_2(V.uGlobal.uLines!DISC_QTY_2)
+'	F.ODBC.conX!rst.Set!DISC_QTY_3(V.uGlobal.uLines!DISC_QTY_3)
+'	F.ODBC.conX!rst.Set!DISC_QTY_4(V.uGlobal.uLines!DISC_QTY_4)
+'	F.ODBC.conX!rst.Set!DISC_QTY_5(V.uGlobal.uLines!DISC_QTY_5)
+'	F.ODBC.conX!rst.Set!DISC_QTY_6(V.uGlobal.uLines!DISC_QTY_6)
+'	F.ODBC.conX!rst.Set!DISC_QTY_7(V.uGlobal.uLines!DISC_QTY_7)
+'	F.ODBC.conX!rst.Set!DISC_QTY_8(V.uGlobal.uLines!DISC_QTY_8)
+'	F.ODBC.conX!rst.Set!DISC_QTY_9(V.uGlobal.uLines!DISC_QTY_9)
+'	F.ODBC.conX!rst.Set!DISC_QTY_10(V.uGlobal.uLines!DISC_QTY_10)
+'	F.ODBC.conX!rst.Set!DISC_QTY_11(V.uGlobal.uLines!DISC_QTY_11)
+'	F.ODBC.conX!rst.Set!DISC_QTY_12(V.uGlobal.uLines!DISC_QTY_12)
+'	F.ODBC.conX!rst.Set!DISC_QTY_13(V.uGlobal.uLines!DISC_QTY_13)
+'	F.ODBC.conX!rst.Set!DISC_QTY_14(V.uGlobal.uLines!DISC_QTY_14)
+'	F.ODBC.conX!rst.Set!DISC_QTY_15(V.uGlobal.uLines!DISC_QTY_15)
+'	F.ODBC.conX!rst.Set!DISC_DESC_1(V.uGlobal.uLines!DISC_DESC_1)
+'	F.ODBC.conX!rst.Set!DISC_DESC_2(V.uGlobal.uLines!DISC_DESC_2)
+'	F.ODBC.conX!rst.Set!DISC_DESC_3(V.uGlobal.uLines!DISC_DESC_3)
+'	F.ODBC.conX!rst.Set!DISC_DESC_4(V.uGlobal.uLines!DISC_DESC_4)
+'	F.ODBC.conX!rst.Set!DISC_DESC_5(V.uGlobal.uLines!DISC_DESC_5)
+'	F.ODBC.conX!rst.Set!DISC_DESC_6(V.uGlobal.uLines!DISC_DESC_6)
+'	F.ODBC.conX!rst.Set!DISC_DESC_7(V.uGlobal.uLines!DISC_DESC_7)
+'	F.ODBC.conX!rst.Set!DISC_DESC_8(V.uGlobal.uLines!DISC_DESC_8)
+'	F.ODBC.conX!rst.Set!DISC_DESC_9(V.uGlobal.uLines!DISC_DESC_9)
+'	F.ODBC.conX!rst.Set!DISC_DESC_10(V.uGlobal.uLines!DISC_DESC_10)
+'	F.ODBC.conX!rst.Set!DISC_DESC_11(V.uGlobal.uLines!DISC_DESC_11)
+'	F.ODBC.conX!rst.Set!DISC_DESC_12(V.uGlobal.uLines!DISC_DESC_12)
+'	F.ODBC.conX!rst.Set!DISC_DESC_13(V.uGlobal.uLines!DISC_DESC_13)
+'	F.ODBC.conX!rst.Set!DISC_DESC_14(V.uGlobal.uLines!DISC_DESC_14)
+'	F.ODBC.conX!rst.Set!DISC_DESC_15(V.uGlobal.uLines!DISC_DESC_15)
+'	F.ODBC.conX!rst.Set!Comment_1_1(V.uGlobal.uLines!Comment_1_1)
+'	F.ODBC.conX!rst.Set!Comment_1_2(V.uGlobal.uLines!Comment_1_2)
+'	F.ODBC.conX!rst.Set!Comment_1_3(V.uGlobal.uLines!Comment_1_3)
+'	F.ODBC.conX!rst.Set!Comment_1_4(V.uGlobal.uLines!Comment_1_4)
+'	F.ODBC.conX!rst.Set!Comment_1_5(V.uGlobal.uLines!Comment_1_5)
+'	F.ODBC.conX!rst.Set!Comment_1_6(V.uGlobal.uLines!Comment_1_6)
+'	F.ODBC.conX!rst.Set!Comment_1_7(V.uGlobal.uLines!Comment_1_7)
+'	F.ODBC.conX!rst.Set!Comment_2_1(V.uGlobal.uLines!Comment_2_1)
+'	F.ODBC.conX!rst.Set!Comment_2_2(V.uGlobal.uLines!Comment_2_2)
+'	F.ODBC.conX!rst.Set!Comment_2_3(V.uGlobal.uLines!Comment_2_3)
+'	F.ODBC.conX!rst.Set!Comment_2_4(V.uGlobal.uLines!Comment_2_4)
+'	F.ODBC.conX!rst.Set!Comment_2_5(V.uGlobal.uLines!Comment_2_5)
+'	F.ODBC.conX!rst.Set!Comment_2_6(V.uGlobal.uLines!Comment_2_6)
+'	F.ODBC.conX!rst.Set!Comment_2_7(V.uGlobal.uLines!Comment_2_7)
+'	F.ODBC.conX!rst.Set!Comment_3_1(V.uGlobal.uLines!Comment_3_1)
+'	F.ODBC.conX!rst.Set!Comment_3_2(V.uGlobal.uLines!Comment_3_2)
+'	F.ODBC.conX!rst.Set!Comment_3_3(V.uGlobal.uLines!Comment_3_3)
+'	F.ODBC.conX!rst.Set!Comment_3_4(V.uGlobal.uLines!Comment_3_4)
+'	F.ODBC.conX!rst.Set!Comment_3_5(V.uGlobal.uLines!Comment_3_5)
+'	F.ODBC.conX!rst.Set!Comment_3_6(V.uGlobal.uLines!Comment_3_6)
+'	F.ODBC.conX!rst.Set!Comment_3_7(V.uGlobal.uLines!Comment_3_7)
+'	F.ODBC.conX!rst.Set!Rej_Text_1(V.uGlobal.uLines!Rej_Text_1)
+'	F.ODBC.conX!rst.Set!Rej_Text_2(V.uGlobal.uLines!Rej_Text_2)
+'	F.ODBC.conX!rst.Set!Rej_Text_3(V.uGlobal.uLines!Rej_Text_3)
+'	F.ODBC.conX!rst.Set!Rej_Text_4(V.uGlobal.uLines!Rej_Text_4)
+
+Program.Sub.Populate_Tables.End
+
+Program.Sub.Print_Report.Start
+F.Intrinsic.Control.SetErrorHandler("Print_Report_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sPath.Declare(String)
+V.Local.sParam.Declare(String)
+V.Local.sValues.Declare(String)
+V.Local.iReport.Declare(Long)
+
+'V.Local.sPath.Set("X:\Projects\Print Internal Rejection Report\QA_REJECT_GUI.RPT")
+F.Intrinsic.String.Concat(V.Caller.BusintDir,"\Custom\ATG_3658_QA_Reject_GUI.RPT",V.Local.sPath)
+F.Global.BI.InitializeReport("Internal Rejection Report",V.Local.sPath,V.Local.iReport)
+V.Local.sParam.Set("Terminal")
+F.Intrinsic.String.Split(V.Local.sParam,"*!*",V.Local.sParam)
+V.Local.sValues.Set(V.Caller.Terminal)
+F.Intrinsic.String.Split(V.Local.sValues,"*!*",V.Local.sValues)
+F.Global.BI.PrintReport(V.Local.iReport,0,V.Local.sParam,V.Local.sValues,"",False)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Print_Report_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_3658_PRINT_INTERNAL_REJ_RPT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Print_Report.End
+
+Program.Sub.Load_Comments.Start
+F.Intrinsic.Control.SetErrorHandler("Load_Comments_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sComments.Declare(String)
+V.Local.sTemp.Declare(String)
+V.Local.iC.Declare(Long)
+
+V.Local.sComments.Set(V.Passed.Comments)
+F.Intrinsic.String.Split(V.Local.sComments,"<CRLF>",V.Local.sComments)
+
+F.Intrinsic.Control.For(V.Local.iC,0,V.Local.sComments.UBound,1)
+	F.Intrinsic.Control.SelectCase(V.Local.iC)
+	F.Intrinsic.Control.Case(0)
+		V.uGlobal.uLines!Comment_1_1.Set(V.Local.sComments(V.Local.iC))
+	F.Intrinsic.Control.Case(1)
+		V.uGlobal.uLines!Comment_1_2.Set(V.Local.sComments(V.Local.iC))
+	F.Intrinsic.Control.Case(2)
+		V.uGlobal.uLines!Comment_1_3.Set(V.Local.sComments(V.Local.iC))
+	F.Intrinsic.Control.Case(3)
+		V.uGlobal.uLines!Comment_1_4.Set(V.Local.sComments(V.Local.iC))
+	F.Intrinsic.Control.Case(4)
+		V.uGlobal.uLines!Comment_1_5.Set(V.Local.sComments(V.Local.iC))
+	F.Intrinsic.Control.Case(5)
+		V.uGlobal.uLines!Comment_1_6.Set(V.Local.sComments(V.Local.iC))
+	F.Intrinsic.Control.Case(6)
+		V.uGlobal.uLines!Comment_1_7.Set(V.Local.sComments(V.Local.iC))
+	F.Intrinsic.Control.Case(7)
+		V.uGlobal.uLines!Comment_2_1.Set(V.Local.sComments(V.Local.iC))
+	F.Intrinsic.Control.Case(8)
+		V.uGlobal.uLines!Comment_2_2.Set(V.Local.sComments(V.Local.iC))
+	F.Intrinsic.Control.Case(9)
+		V.uGlobal.uLines!Comment_2_3.Set(V.Local.sComments(V.Local.iC))
+	F.Intrinsic.Control.Case(10)
+		V.uGlobal.uLines!Comment_2_4.Set(V.Local.sComments(V.Local.iC))
+	F.Intrinsic.Control.Case(11)
+		V.uGlobal.uLines!Comment_2_5.Set(V.Local.sComments(V.Local.iC))
+	F.Intrinsic.Control.Case(12)
+		V.uGlobal.uLines!Comment_2_6.Set(V.Local.sComments(V.Local.iC))
+	F.Intrinsic.Control.Case(13)
+		V.uGlobal.uLines!Comment_2_7.Set(V.Local.sComments(V.Local.iC))
+	F.Intrinsic.Control.Case(14)
+		V.uGlobal.uLines!Comment_3_1.Set(V.Local.sComments(V.Local.iC))
+	F.Intrinsic.Control.Case(15)
+		V.uGlobal.uLines!Comment_3_2.Set(V.Local.sComments(V.Local.iC))
+	F.Intrinsic.Control.Case(16)
+		V.uGlobal.uLines!Comment_3_3.Set(V.Local.sComments(V.Local.iC))
+	F.Intrinsic.Control.Case(17)
+		V.uGlobal.uLines!Comment_3_4.Set(V.Local.sComments(V.Local.iC))
+	F.Intrinsic.Control.Case(18)
+		V.uGlobal.uLines!Comment_3_5.Set(V.Local.sComments(V.Local.iC))
+	F.Intrinsic.Control.Case(19)
+		V.uGlobal.uLines!Comment_3_6.Set(V.Local.sComments(V.Local.iC))
+	F.Intrinsic.Control.Case(20)
+		V.uGlobal.uLines!Comment_3_7.Set(V.Local.sComments(V.Local.iC))
+	F.Intrinsic.Control.CaseElse
+		F.Intrinsic.UI.Msgbox("Comments entered are longer than the max length allowed.")
+	F.Intrinsic.Control.EndSelect
+F.Intrinsic.Control.Next(V.Local.iC)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Load_Comments_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_3658_PRINT_INTERNAL_REJ_RPT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Load_Comments.End
+
+Program.Sub.Comments.Start
+${$0$}$ATG_3658_PRINT_INTERNAL_REJ_RPT$}$RLK$}$3/31/2016
+Program.Sub.Comments.End
+
